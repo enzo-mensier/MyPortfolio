@@ -1,0 +1,151 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+    color: #333;
+    background-color: #f9f9f9;
+    margin: 0;
+}
+
+header {
+    position: sticky;
+    top: 0;
+    background: white;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    z-index: 1000;
+}
+
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 2rem;
+    max-width: 1200px;
+    margin: auto;
+}
+
+nav img {
+    width: 50px;
+    height: auto;
+    padding: 5px;
+}
+
+nav a {
+    text-decoration: none;
+    color: #333;
+    margin: 0 1rem;
+    font-weight: 500;
+}
+
+nav a:hover {
+    color: #0071e3;
+}
+
+.hero {
+    text-align: center;
+    padding: 5rem 1rem;
+    background: linear-gradient(to bottom, #e0e0e0, #f9f9f9);
+}
+
+.hero h1 {
+    font-size: 3rem;
+    color: #333;
+}
+
+.hero p {
+    font-size: 1.25rem;
+    margin-top: 1rem;
+    color: #555;
+}
+
+section {
+    padding: 3rem 1rem;
+    max-width: 1200px;
+    margin: auto;
+}
+
+#about {
+    text-align: center;
+}
+
+#mypicture {
+    width: 150px;
+    height: auto;
+    border-radius: 50%;
+    margin-bottom: 1rem;
+}
+
+#about p {
+    margin: 1rem 0;
+    font-size: 1.2rem;
+}
+
+#about .links a {
+    margin: 0 0.5rem;
+    color: #0071e3;
+    text-decoration: none;
+    font-size: 1.2rem;
+}
+
+#about .links a:hover {
+    text-decoration: underline;
+}
+
+.projects {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+    gap: 2rem;
+}
+
+#title-project {
+    margin-bottom: 20px;
+}
+
+.project {
+    background: white;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    text-align: center;
+}
+
+.project img {
+    width: 100%;
+    height: 300px;
+    object-fit: cover;
+}
+
+.project img:hover {
+    width: 100%;
+    height: 100%;
+}
+
+.project h3 {
+    margin: 1rem 0;
+    font-size: 1.5rem;
+}
+
+.project p {
+    padding: 0 1rem 1.5rem;
+    color: #555;
+}
+
+footer {
+    text-align: center;
+    padding: 2rem 1rem;
+    background: #333;
+    color: white;
+}
+
+footer a {
+    color: #0071e3;
+    text-decoration: none;
+}
+
+footer a:hover {
+    text-decoration: underline;
+}
