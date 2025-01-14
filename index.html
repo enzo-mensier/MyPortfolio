@@ -5,70 +5,104 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css">
     <title> Portfolio | Enzo Mensier </title>
+    <link rel="icon" type="image/png" href="images/photo-enzo.png">
 </head>
 <body>
     <header>
-        <nav>
-            <img src="images/logo.png" alt="logo">
-            <div>
-                <a href="#about">À propos</a>
-                <a href="#projects">Projets</a>
-                <a href="#contact">Contact</a>
-            </div>
-        </nav>
+        <a href="#"><img id="header-logo" src="images/logo.png" alt="logo"></a>
+        <p><b>Enzo Mensier.</b></p>
     </header>
 
     <section id="about">
-        <img id="mypicture" src="images/enzo.jpg" alt="Photo de profil">
         <p>
-            Je suis un étudiant dans le secteur de l'informatique à Lille, passionné par le développement web. <br>
-            Mon objectif est de faire de cette passion mon métier et de créer des expériences web engageantes et conviviales !        
+            Je suis un étudiant dans le secteur de l'informatique à Lille, passionné par le développement web.
+            <br><br>Mon objectif est de faire de cette passion mon métier et de créer des expériences web engageantes et conviviales !        
         </p>
-        <div class="links">
-            <a href="https://github.com" target="_blank">GitHub</a>
-            <a href="https://www.linkedin.com/in/enzo-mensier-930b222a0/" target="_blank">LinkedIn</a>
-            <a href="mailto:example@mail.com">Mail</a>
-        </div>
+        <nav>
+            <a href="#"><img src="images/mail.png" alt="icon-mail"></a>
+            <a href="#"><img src="images/linkedin.png" alt="icon-linkedin"></a>
+            <a href="#"><img src="images/github.png" alt="icon-github"></a>
+        </nav>
     </section>
 
     <section id="projects">
-        <h2 id="title-project">Mes Projets</h2>
+        <h2 id="title-project">Mes Projets web</h2>
         <div class="projects">
             <div class="project">
-                <img src="projet/Projet-IoT.png" alt="IoT">
+                <img class="img-project" src="projet/Projet-IoT.png" alt="IoT">
                 <h3>IoT</h3>
-                <p>...</p>
+                <p>Supervision d'une salle de serveur grâce à l'IoT.</p>
+                <div>
+                    <img class="icone-project" src="icone/raspberry.png" alt="icone-raspberry">
+                    <img class="icone-project" src="icone/grafana.png" alt="icone-garafan">
+                    <img class="icone-project" src="icone/cpp.png" alt="icone-cpp">
+                    <img class="icone-project" src="icone/php.png" alt="icone-php">
+                    <img class="icone-project" src="icone/css.png" alt="icone-css">
+                    <img class="icone-project" src="icone/vscode.png" alt="icone-vscode">
+                    <img class="icone-project" src="icone/wampp.png" alt="icone-wampp">
+                    <img class="icone-project" src="icone/chartjs.png" alt="icone-chartjs">
+                </div>
             </div>
             <div class="project">
-                <img src="projet/Projet-Stage.png" alt="Site Stage">
-                <h3>Site de Stage</h3>
-                <p>...</p>
+                <img class="img-project" src="projet/Projet-Stage.png" alt="Site Stage">
+                <h3>Page Statique</h3>
+                <p>Une tâche en tant que stagiaire développeur front-end.</p>
+                <div>
+                    <img class="icone-project" src="icone/html.png" alt="icone-html">
+                    <img class="icone-project" src="icone/css.png" alt="icone-css">
+                    <img class="icone-project" src="icone/vscode.png" alt="icone-vscode">
+                </div>
             </div>
             <div class="project">
-                <img src="projet/Projet-FootView.png" alt="Foot View">
+                <img class="img-project" src="projet/Projet-FootView.png" alt="Foot View">
                 <h3>Foot View</h3>
-                <p>...</p>
+                <p>Interface web utile à l'organisation d'un tournoi de foot.</p>
+                <div>
+                    <img class="icone-project" src="icone/php.png" alt="icone-php">
+                    <img class="icone-project" src="icone/css.png" alt="icone-css">
+                    <img class="icone-project" src="icone/javascript.png" alt="icone-javascript">
+                    <img class="icone-project" src="icone/vscode.png" alt="icone-vscode">
+                </div>
             </div>
             <div class="project">
-                <img src="projet/Projet-Hville.png" alt="Hville">
+                <img class="img-project" src="projet/Projet-Hville.png" alt="Hville">
                 <h3>Hville</h3>
-                <p>...</p>
+                <p>Initiation au langage SQL avec un mini-projet de groupe.</p>
+                <div>
+                    <img class="icone-project" src="icone/php.png" alt="icone-php">
+                    <img class="icone-project" src="icone/css.png" alt="icone-css">
+                    <img class="icone-project" src="icone/vscode.png" alt="icone-vscode">
+                    <img class="icone-project" src="icone/mysql.png" alt="icone-mysql">
+                    <img class="icone-project" src="icone/phpmyadmin.png" alt="icone-phpmyadmin">
+
+                </div>
             </div>
             <div class="project">
-                <img src="projet/Projet-PortfolioTest.png" alt="Portfolio Test">
+                <img class="img-project" src="projet/Projet-PortfolioTest.png" alt="Portfolio Test">
                 <h3>Portfolio Test</h3>
-                <p>...</p>
+                <p>Portfolio qui précede celui que vous êtes entrain de parcourrir.</p>
+                <div>
+                    <img class="icone-project" src="icone/html.png" alt="icone-html">
+                    <img class="icone-project" src="icone/css.png" alt="icone-css">
+                    <img class="icone-project" src="icone/vscode.png" alt="icone-vscode">
+                    <img class="icone-project" src="icone/bootstrap.png" alt="icone-bootstrap">
+                </div>
             </div>
             <div class="project">
-                <img src="projet/Projet-IT.png" alt="Restaurant italien">
+                <img class="img-project" src="projet/Projet-IT.png" alt="Restaurant italien">
                 <h3>Restaurant Italien</h3>
-                <p>...</p>
+                <p>Initiation au langages web.</p>
+                <div>
+                    <img class="icone-project" src="icone/html.png" alt="icone-html">
+                    <img class="icone-project" src="icone/css.png" alt="icone-css">
+                    <img class="icone-project" src="icone/vscode.png" alt="icone-vscode">
+                </div>
             </div>
         </div>
     </section>
 
     <footer>
-        <p>&copy; 2025 - Enzo Mensier. <a href="CV Enzo.pdf" target="_blank">Télécharger le CV</a></p>
+        <p>&copy; 2025 - Enzo Mensier. <a href="CV Enzo.pdf" target="_blank">Télécharger mon CV</a></p>
     </footer>
 </body>
 </html>
