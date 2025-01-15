@@ -1,37 +1,73 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
+    <!-- Métadonnées et liens vers les ressources externes -->
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css">
     <title> Portfolio | Enzo Mensier </title>
+        <!-- Icône de la page affichée dans l'onglet du navigateur -->
     <link rel="icon" type="image/png" href="images/photo-enzo.png">
+    <!-- Bibliothèque pour les animations (AOS) -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.1/aos.css" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.1/aos.js"></script>
 </head>
 <body>
     <header>
-        <a href="#"><img id="header-logo" src="images/logo.png" alt="logo"></a>
-        <p><b>Enzo Mensier.</b></p>
+        <a id="header-left" href="#" target="_blank">
+            <a href="#"><img id="header-logo" src="images/logo-black.png" alt="logo"></a>
+            <p id="header-name"><b>Enzo Mensier.</b></p>
+        </a>
+        <button id="theme-toggle">
+            <img data-aos="zoom-in-down"
+            data-aos-duration="1500" 
+            id="theme-icon" src="images/sun.png" alt="Mode clair">
+        </button>
     </header>
-
     <section id="about">
+        <h2 id="title-project"
+        data-aos="fade-right"
+        data-aos-duration="1500">
+            Bienvenue sur mon Portfolio !
+        </h2>
         <p>
             Je suis un étudiant dans le secteur de l'informatique à Lille, passionné par le développement web.
             <br><br>Mon objectif est de faire de cette passion mon métier et de créer des expériences web engageantes et conviviales !        
         </p>
         <nav>
-            <a href="#"><img src="images/mail.png" alt="icon-mail"></a>
-            <a href="#"><img src="images/linkedin.png" alt="icon-linkedin"></a>
-            <a href="#"><img src="images/github.png" alt="icon-github"></a>
+            <div class="links-media">
+                <span class="tooltip">Mail</span>
+                <span>
+                    <a href="mailto:enzo.mensier2@gmail.com"><img src="icone/mail.png" alt="icon-mail"></a>
+                </span>
+            </div>
+            <div class="links-media">
+                <span class="tooltip">Linkedin</span>
+                <span>
+                    <a href="https://www.linkedin.com/in/enzo-mensier-930b222a0/"><img src="icone/linkedin.png" alt="icon-linkedin"></a>
+                </span>
+            </div>
+            <div class="links-media">
+                <span class="tooltip">GitHub</span>
+                <span>
+                    <a href="https://github.com/enzo-mensier"><img src="icone/github.png" alt="icon-github"></a>
+                </span>
+            </div>
         </nav>
     </section>
 
     <section id="projects">
-        <h2 id="title-project">Mes Projets web</h2>
+        <h2 id="title-project"
+        data-aos="fade-right"
+        data-aos-duration="1500">
+            Mes Projets web
+        </h2>
         <div class="projects">
-            <div class="project">
+            <div class="project"  data-aos="zoom-in-right"
+            data-aos-duration="1200">
                 <img class="img-project" src="projet/Projet-IoT.png" alt="IoT">
                 <h3>IoT</h3>
-                <p>Supervision d'une salle de serveur grâce à l'IoT.</p>
+                <p>Supervision d'une salle de serveur grâce à l'IoT</p>
                 <div>
                     <img class="icone-project" src="icone/raspberry.png" alt="icone-raspberry">
                     <img class="icone-project" src="icone/grafana.png" alt="icone-garafan">
@@ -43,20 +79,22 @@
                     <img class="icone-project" src="icone/chartjs.png" alt="icone-chartjs">
                 </div>
             </div>
-            <div class="project">
+            <div class="project"  data-aos="zoom-in-left"
+            data-aos-duration="1200">
                 <img class="img-project" src="projet/Projet-Stage.png" alt="Site Stage">
                 <h3>Page Statique</h3>
-                <p>Une tâche en tant que stagiaire développeur front-end.</p>
+                <p>Une tâche en tant que stagiaire développeur front-end</p>
                 <div>
                     <img class="icone-project" src="icone/html.png" alt="icone-html">
                     <img class="icone-project" src="icone/css.png" alt="icone-css">
                     <img class="icone-project" src="icone/vscode.png" alt="icone-vscode">
                 </div>
             </div>
-            <div class="project">
+            <div class="project" data-aos="zoom-in-right"
+            data-aos-duration="1200">
                 <img class="img-project" src="projet/Projet-FootView.png" alt="Foot View">
                 <h3>Foot View</h3>
-                <p>Interface web utile à l'organisation d'un tournoi de foot.</p>
+                <p>Interface web utile à l'organisation d'un tournoi de foot</p>
                 <div>
                     <img class="icone-project" src="icone/php.png" alt="icone-php">
                     <img class="icone-project" src="icone/css.png" alt="icone-css">
@@ -64,10 +102,11 @@
                     <img class="icone-project" src="icone/vscode.png" alt="icone-vscode">
                 </div>
             </div>
-            <div class="project">
+            <div class="project" data-aos="zoom-in-left"
+            data-aos-duration="1200">
                 <img class="img-project" src="projet/Projet-Hville.png" alt="Hville">
                 <h3>Hville</h3>
-                <p>Initiation au langage SQL avec un mini-projet de groupe.</p>
+                <p>Initiation au langage SQL avec un mini-projet de groupe</p>
                 <div>
                     <img class="icone-project" src="icone/php.png" alt="icone-php">
                     <img class="icone-project" src="icone/css.png" alt="icone-css">
@@ -77,10 +116,11 @@
 
                 </div>
             </div>
-            <div class="project">
+            <div class="project"  data-aos="zoom-in-right"
+            data-aos-duration="1200">
                 <img class="img-project" src="projet/Projet-PortfolioTest.png" alt="Portfolio Test">
-                <h3>Portfolio Test</h3>
-                <p>Portfolio qui précede celui que vous êtes entrain de parcourrir.</p>
+                <h3>Portfolio Essai</h3>
+                <p>Portfolio qui précede celui que vous êtes entrain de parcourir</p>
                 <div>
                     <img class="icone-project" src="icone/html.png" alt="icone-html">
                     <img class="icone-project" src="icone/css.png" alt="icone-css">
@@ -88,21 +128,25 @@
                     <img class="icone-project" src="icone/bootstrap.png" alt="icone-bootstrap">
                 </div>
             </div>
-            <div class="project">
-                <img class="img-project" src="projet/Projet-IT.png" alt="Restaurant italien">
-                <h3>Restaurant Italien</h3>
-                <p>Initiation au langages web.</p>
+            <div class="project"  data-aos="zoom-in-left"
+            data-aos-duration="1200">
+                <img class="img-project" src="projet/Projet-ToDoList.png" alt="ToDoList">
+                <h3>To-Do List</h3>
+                <p>Iniitiation au langage Node.js</p>
                 <div>
-                    <img class="icone-project" src="icone/html.png" alt="icone-html">
-                    <img class="icone-project" src="icone/css.png" alt="icone-css">
-                    <img class="icone-project" src="icone/vscode.png" alt="icone-vscode">
+                    <img class="icone-project" src="icone/nodejs.png" alt="icone-nodejs">
+                    <img class="icone-project" src="icone/expo.png" alt="icone-expo">
                 </div>
             </div>
         </div>
     </section>
-
     <footer>
-        <p>&copy; 2025 - Enzo Mensier. <a href="CV Enzo.pdf" target="_blank">Télécharger mon CV</a></p>
+        <p>&copy; Janvier 2025 - Mensier Enzo.</p>
+        <a href="CV-Enzo-Mensier.pdf" target="_blank">
+            <img id="footer-btn" src="images/btn-save.png" alt="button-save">
+            <p id="footer-download">Téléchargez mon CV</p>
+        </a>
     </footer>
+    <script src="script.js"></script> 
 </body>
 </html>
