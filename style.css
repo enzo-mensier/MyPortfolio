@@ -19,7 +19,7 @@ body {
 header {
     display: flex;
     align-items: center;
-    padding: 1rem 2rem;
+    padding: 1rem 3rem;
     background: rgba(255, 255, 255, 0.7);
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
     position: sticky;
@@ -76,8 +76,8 @@ body.dark-mode {
 }
 
 #theme-icon {
-    height: 30px;
-    width: 30px;
+    height: 40px;
+    width: 40px;
 }
 
 section {

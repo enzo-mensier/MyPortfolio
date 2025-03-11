@@ -8,7 +8,7 @@ const toggleButton = document.getElementById('theme-toggle');
     // Vérifie le thème précédent
     if (localStorage.getItem('theme') === 'dark') {
         document.body.classList.add(darkModeClass);
-        themeIcon.src = 'images/moon.png'; // Icône lune pour le mode sombre
+        themeIcon.src = 'images/moon.svg'; // Icône lune pour le mode sombre
         themeIcon.alt = 'Mode sombre';
         headerLogo.src = 'images/logo-white.png'; // Logo blanc pour le mode sombre
     }
@@ -17,12 +17,12 @@ const toggleButton = document.getElementById('theme-toggle');
         document.body.classList.toggle(darkModeClass);
 
         if (document.body.classList.contains(darkModeClass)) {
-            themeIcon.src = 'images/moon.png'; // Icône lune pour le mode sombre
+            themeIcon.src = 'images/moon.svg'; // Icône lune pour le mode sombre
             themeIcon.alt = 'Mode sombre';
             headerLogo.src = 'images/logo-white.png'; // Logo blanc pour le mode sombre
             localStorage.setItem('theme', 'dark');
         } else {
-            themeIcon.src = 'images/sun.png'; // Icône soleil pour le mode clair
+            themeIcon.src = 'images/sun.svg'; // Icône soleil pour le mode clair
             themeIcon.alt = 'Mode clair';
             headerLogo.src = 'images/logo-black.png'; // Logo original pour le mode clair
             localStorage.setItem('theme', 'light');
