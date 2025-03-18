@@ -1,155 +1,353 @@
 <!DOCTYPE html>
-<html lang="fr">
+<html lang="fr" class="scroll-smooth">
 <head>
-    <!-- Métadonnées et liens vers les ressources externes -->
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="style.css">
-    <title> Portfolio | Enzo Mensier </title>
-        <!-- Icône de la page affichée dans l'onglet du navigateur -->
+    <title>Portfolio | Enzo Mensier</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <link rel="icon" type="image/png" href="images/photo-enzo.png">
-    <!-- Bibliothèque pour les animations (AOS) -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.1/aos.css" />
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.1/aos.js"></script>
+    <style>
+        @keyframes shine {
+            100% { left: 200%; }
+        }
+        .project-card:hover::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 50%;
+            height: 100%;
+            background: linear-gradient(
+                to right,
+                rgba(255,255,255,0) 0%,
+                rgba(255,255,255,0.03) 50%,
+                rgba(255,255,255,0) 100%
+            );
+            animation: shine 1.2s;
+        }
+    </style>
 </head>
-<body>
-    <header>
-        <a id="header-left" href="#" target="_blank">
-            <a href="#"><img id="header-logo" src="images/logo-black.png" alt="logo"></a>
-            <p id="header-name"><b>Enzo Mensier.</b></p>
-        </a>
-        <button id="theme-toggle">
-            <img data-aos="zoom-in-down"
-            data-aos-duration="1500" 
-            id="theme-icon" src="images/soleil.png" alt="Mode clair">
-        </button>
+<body class="font-inter bg-gray-50 dark:bg-[#161618] transition-colors duration-300">
+    <!-- Header -->
+    <header class="fixed w-full py-4 px-6 lg:px-12 bg-white/80 dark:bg-[#161618]/80 backdrop-blur-xl border-b border-gray-100 dark:border-gray-800 z-50">
+        <div class="max-w-7xl mx-auto flex justify-between items-center">
+            <a href="#" class="flex items-center space-x-3">
+                <img id="header-logo" src="images/logo-black.png" alt="Logo" class="h-8 dark:hidden">
+                <img id="header-logo-dark" src="images/logo-white.png" alt="Logo" class="h-8 hidden dark:block">
+                <span class="text-lg font-semibold text-gray-900 dark:text-gray-100">Enzo Mensier</span>
+            </a>
+            <button id="theme-toggle" class="p-2 rounded-lg hover:bg-gray-100 dark:hover:bg-gray-800 transition-colors">
+                <img id="theme-icon" src="images/soleil.png" alt="Theme" class="w-6 h-6">
+            </button>
+        </div>
     </header>
-    <section id="about">
-        <h2 id="title-project"
-        data-aos="fade-right"
-        data-aos-duration="1500">
-            Bienvenue sur mon Portfolio !
-        </h2>
-        <p>
-            Je suis un étudiant dans le secteur de l'informatique à Lille, passionné par le développement web.
-            <br><br>Mon objectif est de faire de cette passion mon métier et de créer des expériences web engageantes et conviviales !        
-        </p>
-        <nav>
-            <div class="links-media">
-                <span class="tooltip">Mail</span>
-                <span>
-                    <a href="mailto:enzo.mensier2@gmail.com" target="_blank"><img src="icone/mail.png" alt="icon-mail"></a>
-                </span>
-            </div>
-            <div class="links-media">
-                <span class="tooltip">Linkedin</span>
-                <span>
-                    <a href="https://www.linkedin.com/in/enzo-mensier/" target="_blank"><img src="icone/linkedin.png" alt="icon-linkedin"></a>
-                </span>
-            </div>
-            <div class="links-media">
-                <span class="tooltip">GitHub</span>
-                <span>
-                    <a href="https://github.com/enzo-mensier" target="_blank"><img src="icone/github.png" alt="icon-github"></a>
-                </span>
-            </div>
-        </nav>
-    </section>
 
-    <section id="projects">
-        <h2 id="title-project"
-        data-aos="fade-right"
-        data-aos-duration="1500">
-            Mes Projets web
-        </h2>
-        <div class="projects">
-            <div class="project"  data-aos="zoom-in-right"
-            data-aos-duration="1200">
-                <img class="img-project" src="projet/Projet-IoT.png" alt="IoT">
-                <h3>IoT</h3>
-                <p>Supervision d'une salle de serveur grâce à l'IoT</p>
-                <div>
-                    <img class="icone-project" src="icone/raspberry.png" alt="icone-raspberry">
-                    <img class="icone-project" src="icone/grafana.png" alt="icone-garafan">
-                    <img class="icone-project" src="icone/cpp.png" alt="icone-cpp">
-                    <img class="icone-project" src="icone/php.png" alt="icone-php">
-                    <img class="icone-project" src="icone/css.png" alt="icone-css">
-                    <img class="icone-project" src="icone/vscode.png" alt="icone-vscode">
-                    <img class="icone-project" src="icone/chartjs.png" alt="icone-chartjs">
-                    <img class="icone-project" src="icone/wampp.png" alt="icone-wampp">
-                </div>
+    <!-- Hero Section -->
+    <main class="pt-24 pb-16 px-6 lg:px-12">
+        <section class="max-w-7xl mx-auto text-center mb-24" data-aos="fade-up">
+            <h1 class="text-4xl md:text-5xl font-bold bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent mb-6">
+                Bienvenue sur mon Portfolio
+            </h1>
+            <p class="text-lg text-gray-600 dark:text-gray-300 max-w-2xl mx-auto mb-8">
+                Étudiant informatique à <u>Lille</u>.<br>
+                Mon objectif dans ce domaine est simplement d'en faire mon métier,<br>
+                Ci-dessous, <u>6 projets</u> qui vous permettent de découvrir ce que je fais de mon temps libre.            
+            </p>
+            <div class="flex justify-center space-x-6">
+                <a href="#contact" class="flex items-center px-6 py-3 bg-blue-600 text-white rounded-full hover:bg-blue-700 transition-colors">
+                    <span>Me contacter</span>
+                </a>
             </div>
-            <div class="project"  data-aos="zoom-in-left"
-            data-aos-duration="1200">
-                <img class="img-project" src="projet/Projet-GymTech.png" alt="ToDoList">
-                <h3>GymTech</h3>
-                <p>Automatisation d'une salle de Sport</p>
-                <div>
-                    <img class="icone-project" src="icone/flutter.png" alt="icone-flutter">
-                    <img class="icone-project" src="icone/dart.png" alt="icone-dart">
-                    <img class="icone-project" src="icone/mysql.png" alt="icone-mysql">
-                    <img class="icone-project" src="icone/phpmyadmin.png" alt="icone-phpmyadmin">
-                    <img class="icone-project" src="icone/wampp.png" alt="icone-wampp">
-                </div>
-            </div>
-            <div class="project"  data-aos="zoom-in-right"
-            data-aos-duration="1200">
-                <img class="img-project" src="projet/Projet-Stage.png" alt="Site Stage">
-                <h3>Page Statique</h3>
-                <p>Une tâche en tant que stagiaire développeur front-end</p>
-                <div>
-                    <img class="icone-project" src="icone/html.png" alt="icone-html">
-                    <img class="icone-project" src="icone/css.png" alt="icone-css">
-                    <img class="icone-project" src="icone/vscode.png" alt="icone-vscode">
-                </div>
-            </div>
-            <div class="project" data-aos="zoom-in-left"
-            data-aos-duration="1200">
-                <img class="img-project" src="projet/Projet-FootView.png" alt="Foot View">
-                <h3>Foot View</h3>
-                <p>Interface web utile à l'organisation d'un tournoi de foot</p>
-                <div>
-                    <img class="icone-project" src="icone/php.png" alt="icone-php">
-                    <img class="icone-project" src="icone/css.png" alt="icone-css">
-                    <img class="icone-project" src="icone/javascript.png" alt="icone-javascript">
-                    <img class="icone-project" src="icone/vscode.png" alt="icone-vscode">
-                </div>
-            </div>
-            <div class="project" data-aos="zoom-in-right"
-            data-aos-duration="1200">
-                <img class="img-project" src="projet/Projet-Hville.png" alt="Hville">
-                <h3>Hville</h3>
-                <p>Initiation au langage SQL avec un mini-projet de groupe</p>
-                <div>
-                    <img class="icone-project" src="icone/php.png" alt="icone-php">
-                    <img class="icone-project" src="icone/css.png" alt="icone-css">
-                    <img class="icone-project" src="icone/vscode.png" alt="icone-vscode">
-                    <img class="icone-project" src="icone/mysql.png" alt="icone-mysql">
-                    <img class="icone-project" src="icone/phpmyadmin.png" alt="icone-phpmyadmin">
+        </section>
 
+        <!-- Projects Grid -->
+        <section class="max-w-7xl mx-auto">
+            <h2 class="text-3xl font-bold text-gray-900 dark:text-white mb-12 text-center" data-aos="fade-up">Mes Projets</h2>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Project Card 1 -->
+                <div class="project-card group relative bg-white dark:bg-gray-800 rounded-2xl p-6 shadow-lg hover:shadow-xl transition-all duration-300" 
+                    data-aos="fade-up">
+                    <div class="overflow-hidden rounded-xl mb-4">
+                        <img src="projet/Projet-IoT.png" alt="IoT" class="w-full h-48 object-cover transform group-hover:scale-105 transition-transform duration-300">
+                    </div>
+                    <h3 class="text-xl font-semibold text-gray-900 dark:text-white mb-2">Supervision IoT</h3>
+                    <p class="text-gray-600 dark:text-gray-300 mb-4">Supervision d'une salle de serveur grâce à l'IoT</p>
+                    <div class="flex flex-wrap gap-3">
+                        <div class="flex items-center space-x-1 px-3 py-1 bg-gray-100 dark:bg-gray-700 rounded-full">
+                            <img src="icone/raspberry.png" class="w-5 h-5">
+                            <span class="text-sm text-gray-600 dark:text-gray-300">Raspberry</span>
+                        </div>
+                        <div class="flex items-center space-x-1 px-3 py-1 bg-gray-100 dark:bg-gray-700 rounded-full">
+                            <img src="icone/grafana.png" class="w-5 h-5">
+                            <span class="text-sm text-gray-600 dark:text-gray-300">Grafana</span>
+                        </div>
+                        <div class="flex items-center space-x-1 px-3 py-1 bg-gray-100 dark:bg-gray-700 rounded-full">
+                            <img src="icone/cpp.png" class="w-5 h-5">
+                            <span class="text-sm text-gray-600 dark:text-gray-300">C++</span>
+                        </div>
+                        <div class="flex items-center space-x-1 px-3 py-1 bg-gray-100 dark:bg-gray-700 rounded-full">
+                            <img src="icone/css.png" class="w-5 h-5">
+                            <span class="text-sm text-gray-600 dark:text-gray-300">CSS</span>
+                        </div>
+                        <div class="flex items-center space-x-1 px-3 py-1 bg-gray-100 dark:bg-gray-700 rounded-full">
+                            <img src="icone/vscode.png" class="w-5 h-5">
+                            <span class="text-sm text-gray-600 dark:text-gray-300">Visual Studio Code</span>
+                        </div>
+                        <div class="flex items-center space-x-1 px-3 py-1 bg-gray-100 dark:bg-gray-700 rounded-full">
+                            <img src="icone/chartjs.png" class="w-5 h-5">
+                            <span class="text-sm text-gray-600 dark:text-gray-300">Chart.js</span>
+                        </div>
+                        <div class="flex items-center space-x-1 px-3 py-1 bg-gray-100 dark:bg-gray-700 rounded-full">
+                            <img src="icone/wampp.png" class="w-5 h-5">
+                            <span class="text-sm text-gray-600 dark:text-gray-300">WampServer</span>
+                        </div>
+                    </div>
+                    <hr class="border-t border-gray-300 my-4">
+                    <div class="mt-4 flex justify-center">
+                        <a href="https://github.com/enzo-mensier/Supervision_Salle_de_Serveur" target="_blank" class="inline-flex items-center space-x-1 px-3 py-1 border border-gray-400 text-gray-600 hover:border-gray-500 hover:text-gray-700 rounded-full transition duration-300">
+                            <img src="icone/github.png" class="w-4 h-4">
+                            <span class="text-sm">GitHub</span>
+                        </a>
+                    </div>
+                </div>
+                <!-- Project Card 2 -->
+                <div class="project-card group relative bg-white dark:bg-gray-800 rounded-2xl p-6 shadow-lg hover:shadow-xl transition-all duration-300" 
+                    data-aos="fade-up">
+                    <div class="overflow-hidden rounded-xl mb-4">
+                        <img src="projet/Projet-GymTech.png" alt="GymTech" class="w-full h-48 object-cover transform group-hover:scale-105 transition-transform duration-300">
+                    </div>
+                    <h3 class="text-xl font-semibold text-gray-900 dark:text-white mb-2">GymTech</h3>
+                    <p class="text-gray-600 dark:text-gray-300 mb-4">Automatisation d'une salle de Sport à Dunkerque</p>
+                    <div class="flex flex-wrap gap-3">
+                        <div class="flex items-center space-x-1 px-3 py-1 bg-gray-100 dark:bg-gray-700 rounded-full">
+                            <img src="icone/flutter.png" class="w-5 h-5">
+                            <span class="text-sm text-gray-600 dark:text-gray-300">Flutter</span>
+                        </div>
+                        <div class="flex items-center space-x-1 px-3 py-1 bg-gray-100 dark:bg-gray-700 rounded-full">
+                            <img src="icone/dart.png" class="w-5 h-5">
+                            <span class="text-sm text-gray-600 dark:text-gray-300">Dart</span>
+                        </div>
+                        <div class="flex items-center space-x-1 px-3 py-1 bg-gray-100 dark:bg-gray-700 rounded-full">
+                            <img src="icone/mysql.png" class="w-5 h-5">
+                            <span class="text-sm text-gray-600 dark:text-gray-300">MySQL</span>
+                        </div>
+                        <div class="flex items-center space-x-1 px-3 py-1 bg-gray-100 dark:bg-gray-700 rounded-full">
+                            <img src="icone/phpmyadmin.png" class="w-5 h-5">
+                            <span class="text-sm text-gray-600 dark:text-gray-300">phphMyAdmin</span>
+                        </div>
+                        <div class="flex items-center space-x-1 px-3 py-1 bg-gray-100 dark:bg-gray-700 rounded-full">
+                            <img src="icone/wampp.png" class="w-5 h-5">
+                            <span class="text-sm text-gray-600 dark:text-gray-300">WampServer</span>
+                        </div>
+                        <div class="flex items-center space-x-1 px-3 py-1 bg-gray-100 dark:bg-gray-700 rounded-full">
+                            <img src="icone/androidstudio.png" class="w-5 h-5">
+                            <span class="text-sm text-gray-600 dark:text-gray-300">Android Studio</span>
+                        </div>
+                    </div>
+                    <hr class="border-t border-gray-300 my-4">
+                    <div class="mt-4 flex justify-center">
+                        <a href="https://github.com/enzo-mensier/GymTech" target="_blank" class="inline-flex items-center space-x-1 px-3 py-1 border border-gray-400 text-gray-600 hover:border-gray-500 hover:text-gray-700 rounded-full transition duration-300">
+                            <img src="icone/github.png" class="w-5 h-5">
+                            <span class="text-sm">GitHub</span>
+                        </a>
+                    </div>
+                </div>
+                <!-- Project Card 3 -->
+                <div class="project-card group relative bg-white dark:bg-gray-800 rounded-2xl p-6 shadow-lg hover:shadow-xl transition-all duration-300" 
+                    data-aos="fade-up">
+                    <div class="overflow-hidden rounded-xl mb-4">
+                        <img src="projet/Projet-LoveLetter.png" alt="LoveLetter" class="w-full h-48 object-cover transform group-hover:scale-105 transition-transform duration-300">
+                    </div>
+                    <h3 class="text-xl font-semibold text-gray-900 dark:text-white mb-2">LoveLetter</h3> 
+                    <p class="text-gray-600 dark:text-gray-300 mb-4">Automatisation d'une salle de Sport à Dunkerque</p>
+                    <div class="flex flex-wrap gap-3">
+                        <div class="flex items-center space-x-1 px-3 py-1 bg-gray-100 dark:bg-gray-700 rounded-full">
+                            <img src="icone/flutter.png" class="w-5 h-5">
+                            <span class="text-sm text-gray-600 dark:text-gray-300">flutter</span>
+                        </div>
+                        <div class="flex items-center space-x-1 px-3 py-1 bg-gray-100 dark:bg-gray-700 rounded-full">
+                            <img src="icone/dart.png" class="w-5 h-5">
+                            <span class="text-sm text-gray-600 dark:text-gray-300">Dart</span>
+                        </div>
+                        <div class="flex items-center space-x-1 px-3 py-1 bg-gray-100 dark:bg-gray-700 rounded-full">
+                            <img src="icone/mysql.png" class="w-5 h-5">
+                            <span class="text-sm text-gray-600 dark:text-gray-300">MySQL</span>
+                        </div>
+                        <div class="flex items-center space-x-1 px-3 py-1 bg-gray-100 dark:bg-gray-700 rounded-full">
+                            <img src="icone/phpmyadmin.png" class="w-5 h-5">
+                            <span class="text-sm text-gray-600 dark:text-gray-300">phphMyAdmin</span>
+                        </div>
+                        <div class="flex items-center space-x-1 px-3 py-1 bg-gray-100 dark:bg-gray-700 rounded-full">
+                            <img src="icone/wampp.png" class="w-5 h-5">
+                            <span class="text-sm text-gray-600 dark:text-gray-300">WampServer</span>
+                        </div>
+                        <div class="flex items-center space-x-1 px-3 py-1 bg-gray-100 dark:bg-gray-700 rounded-full">
+                            <img src="icone/androidstudio.png" class="w-5 h-5">
+                            <span class="text-sm text-gray-600 dark:text-gray-300">Android Studio</span>
+                        </div>
+                    </div>
+                    <hr class="border-t border-gray-300 my-4">
+                    <div class="mt-4 flex justify-center space-x-4">
+                        <a href="https://votre-site-web.com" target="_blank" class="inline-flex items-center space-x-1 px-3 py-1 border border-gray-400 text-gray-600 hover:border-gray-500 hover:text-gray-700 rounded-full transition duration-300">
+                            <img src="icone/website.png" class="w-4 h-4">
+                            <span class="text-sm">Visiter le site web</span>
+                        </a>
+                        <a href="https://github.com/enzo-mensier/LoveLetter" target="_blank" class="inline-flex items-center space-x-1 px-3 py-1 border border-gray-400 text-gray-600 hover:border-gray-500 hover:text-gray-700 rounded-full transition duration-300">
+                            <img src="icone/github.png" class="w-5 h-5">
+                            <span class="text-sm">GitHub</span>
+                        </a>
+                    </div>
+                </div>
+                <!-- Project Card 4 -->
+                <div class="project-card group relative bg-white dark:bg-gray-800 rounded-2xl p-6 shadow-lg hover:shadow-xl transition-all duration-300" 
+                    data-aos="fade-up">
+                    <div class="overflow-hidden rounded-xl mb-4">
+                        <img src="projet/Projet-FootView.png" alt="FootView" class="w-full h-48 object-cover transform group-hover:scale-105 transition-transform duration-300">
+                    </div>
+                    <h3 class="text-xl font-semibold text-gray-900 dark:text-white mb-2">Foot-View</h3>
+                    <p class="text-gray-600 dark:text-gray-300 mb-4">Interface web utile à l'organisation d'un tournoi de foot</p>
+                    <div class="flex flex-wrap gap-3">
+                        <div class="flex items-center space-x-1 px-3 py-1 bg-gray-100 dark:bg-gray-700 rounded-full">
+                            <img src="icone/php.png" class="w-5 h-5">
+                            <span class="text-sm text-gray-600 dark:text-gray-300">PHP</span>
+                        </div>
+                        <div class="flex items-center space-x-1 px-3 py-1 bg-gray-100 dark:bg-gray-700 rounded-full">
+                            <img src="icone/css.png" class="w-5 h-5">
+                            <span class="text-sm text-gray-600 dark:text-gray-300">CSS</span>
+                        </div>
+                        <div class="flex items-center space-x-1 px-3 py-1 bg-gray-100 dark:bg-gray-700 rounded-full">
+                            <img src="icone/javascript.png" class="w-5 h-5">
+                            <span class="text-sm text-gray-600 dark:text-gray-300">JavaScript</span>
+                        </div>
+                        <div class="flex items-center space-x-1 px-3 py-1 bg-gray-100 dark:bg-gray-700 rounded-full">
+                            <img src="icone/vscode.png" class="w-5 h-5">
+                            <span class="text-sm text-gray-600 dark:text-gray-300">Visual Studio Code</span>
+                        </div>
+                    </div>
+                    <hr class="border-t border-gray-300 my-4">
+                    <div class="mt-4 flex justify-center">
+                        <a href="https://github.com/wicra/FootView" target="_blank" class="inline-flex items-center space-x-1 px-3 py-1 border border-gray-400 text-gray-600 hover:border-gray-500 hover:text-gray-700 rounded-full transition duration-300">
+                            <img src="icone/github.png" class="w-4 h-4">
+                            <span class="text-sm">GitHub</span>
+                        </a>
+                    </div>
+                </div>
+                <!-- Project Card 5 -->
+                <div class="project-card group relative bg-white dark:bg-gray-800 rounded-2xl p-6 shadow-lg hover:shadow-xl transition-all duration-300" 
+                    data-aos="fade-up">
+                    <div class="overflow-hidden rounded-xl mb-4">
+                        <img src="projet/Projet-Hville.png" alt="Hville" class="w-full h-48 object-cover transform group-hover:scale-105 transition-transform duration-300">
+                    </div>
+                    <h3 class="text-xl font-semibold text-gray-900 dark:text-white mb-2">Hville</h3>
+                    <p class="text-gray-600 dark:text-gray-300 mb-4">Initiation au langage SQL avec un mini-projet de groupe</p>
+                    <div class="flex flex-wrap gap-3">
+                        <div class="flex items-center space-x-1 px-3 py-1 bg-gray-100 dark:bg-gray-700 rounded-full">
+                            <img src="icone/php.png" class="w-5 h-5">
+                            <span class="text-sm text-gray-600 dark:text-gray-300">PHP</span>
+                        </div>
+                        <div class="flex items-center space-x-1 px-3 py-1 bg-gray-100 dark:bg-gray-700 rounded-full">
+                            <img src="icone/css.png" class="w-5 h-5">
+                            <span class="text-sm text-gray-600 dark:text-gray-300">CSS</span>
+                        </div>
+                        <div class="flex items-center space-x-1 px-3 py-1 bg-gray-100 dark:bg-gray-700 rounded-full">
+                            <img src="icone/vscode.png" class="w-5 h-5">
+                            <span class="text-sm text-gray-600 dark:text-gray-300">Visual Studio Code</span>
+                        </div>
+                        <div class="flex items-center space-x-1 px-3 py-1 bg-gray-100 dark:bg-gray-700 rounded-full">
+                            <img src="icone/mysql.png" class="w-5 h-5">
+                            <span class="text-sm text-gray-600 dark:text-gray-300">MySQL</span>
+                        </div>
+                        <div class="flex items-center space-x-1 px-3 py-1 bg-gray-100 dark:bg-gray-700 rounded-full">
+                            <img src="icone/phpmyadmin.png" class="w-5 h-5">
+                            <span class="text-sm text-gray-600 dark:text-gray-300">phpMyAdmin</span>
+                        </div>
+                        <div class="flex items-center space-x-1 px-3 py-1 bg-gray-100 dark:bg-gray-700 rounded-full">
+                            <img src="icone/wampp.png" class="w-5 h-5">
+                            <span class="text-sm text-gray-600 dark:text-gray-300">WampServer</span>
+                        </div>
+                </div>
+                <hr class="border-t border-gray-300 my-4">
+                <div class="mt-4 flex justify-center">
+                    <a href="https://github.com/enzo-mensier/Hville" target="_blank" class="inline-flex items-center space-x-1 px-3 py-1 border border-gray-400 text-gray-600 hover:border-gray-500 hover:text-gray-700 rounded-full transition duration-300">
+                        <img src="icone/github.png" class="w-4 h-4">
+                        <span class="text-sm">GitHub</span>
+                    </a>
                 </div>
             </div>
-            <div class="project"  data-aos="zoom-in-left"
-            data-aos-duration="1200">
-                <img class="img-project" src="projet/Projet-PortfolioTest.png" alt="Portfolio Test">
-                <h3>Portfolio Essai</h3>
-                <p>Portfolio qui précede celui que vous êtes entrain de parcourir</p>
-                <div>
-                    <img class="icone-project" src="icone/html.png" alt="icone-html">
-                    <img class="icone-project" src="icone/css.png" alt="icone-css">
-                    <img class="icone-project" src="icone/vscode.png" alt="icone-vscode">
-                    <img class="icone-project" src="icone/bootstrap.png" alt="icone-bootstrap">
+                <!-- Project Card 6 -->
+                <div class="project-card group relative bg-white dark:bg-gray-800 rounded-2xl p-6 shadow-lg hover:shadow-xl transition-all duration-300" 
+                     data-aos="fade-up">
+                    <div class="overflow-hidden rounded-xl mb-4">
+                        <img src="projet/Projet-PortfolioTest.png" alt="PortfolioTest" class="w-full h-48 object-cover transform group-hover:scale-105 transition-transform duration-300">
+                    </div>
+                    <h3 class="text-xl font-semibold text-gray-900 dark:text-white mb-2">Portfolio essai</h3>
+                    <p class="text-gray-600 dark:text-gray-300 mb-4">Portfolio qui précede celui que vous êtes entrain de parcourir</p>
+                    <div class="flex flex-wrap gap-3">
+                        <div class="flex items-center space-x-1 px-3 py-1 bg-gray-100 dark:bg-gray-700 rounded-full">
+                            <img src="icone/html.png" class="w-5 h-5">
+                            <span class="text-sm text-gray-600 dark:text-gray-300">HTML</span>
+                        </div>
+                        <div class="flex items-center space-x-1 px-3 py-1 bg-gray-100 dark:bg-gray-700 rounded-full">
+                            <img src="icone/css.png" class="w-5 h-5">
+                            <span class="text-sm text-gray-600 dark:text-gray-300">CSS</span>
+                        </div>
+                        <div class="flex items-center space-x-1 px-3 py-1 bg-gray-100 dark:bg-gray-700 rounded-full">
+                            <img src="icone/vscode.png" class="w-5 h-5">
+                            <span class="text-sm text-gray-600 dark:text-gray-300">Visual Studio Code</span>
+                        </div>
+                        <div class="flex items-center space-x-1 px-3 py-1 bg-gray-100 dark:bg-gray-700 rounded-full">
+                            <img src="icone/bootstrap.png" class="w-5 h-5">
+                            <span class="text-sm text-gray-600 dark:text-gray-300">Bootstrap</span>
+                        </div>
+                    </div>
                 </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-gray-900 text-gray-300 py-12">
+        <div class="max-w-7xl mx-auto px-6 lg:px-12">
+            <div class="flex flex-col md:flex-row justify-between items-center">
+                <p class="mb-4 md:mb-0">&copy; 2024 Enzo Mensier. Tous droits réservés.</p>
+                <a href="CV-Enzo-Mensier.pdf" download class="flex items-center space-x-2 px-6 py-2 bg-blue-600 text-white rounded-full hover:bg-blue-700 transition-colors">
+                    <img src="icone/btn-save.png" class="w-5">
+                    <span>Télécharger mon CV</span>
+                </a>
             </div>
         </div>
-    </section>
-    <footer>
-        <p>&copy; Janvier 2025 - Mensier Enzo.</p>
-        <a href="CV-Enzo-Mensier.pdf" target="_blank">
-            <img id="footer-btn" src="images/btn-save.png" alt="button-save">
-            <p id="footer-download">Téléchargez mon CV</p>
-        </a>
     </footer>
-    <script src="script.js"></script> 
+
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+    <script>
+        AOS.init({
+            once: true,
+            duration: 800,
+            easing: 'ease-out-cubic'
+        });
+
+        // Dark Mode Toggle
+        const toggleButton = document.getElementById('theme-toggle');
+        const themeIcon = document.getElementById('theme-icon');
+        
+        if (localStorage.getItem('theme') === 'dark') {
+            document.documentElement.classList.add('dark');
+            themeIcon.src = 'images/lune.png';
+        }
+
+        toggleButton.addEventListener('click', () => {
+            document.documentElement.classList.toggle('dark');
+            if (document.documentElement.classList.contains('dark')) {
+                localStorage.setItem('theme', 'dark');
+                themeIcon.src = 'images/lune.png';
+            } else {
+                localStorage.setItem('theme', 'light');
+                themeIcon.src = 'images/soleil.png';
+            }
+        });
+    </script>
 </body>
 </html>
