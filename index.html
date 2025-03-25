@@ -42,8 +42,31 @@
                 <img src="images/logo-enzo.png" alt="Logo" class="h-8">
                 <span class="text-lg font-semibold text-gray-900">Enzo Mensier</span>
             </a>
+            <div class="flex items-center space-x-4"> 
+                <ul class="flex space-x-4">
+                    <li class="bg-gray-100 h-10 w-10 rounded-full flex items-center justify-center shrink-0">
+                        <a href="mailto:enzo.mensier@gmail.com" target="_blank"
+                            class="hover:opacity-75 transition-opacity">
+                            <i class="fa-solid fa-envelope text-black-100 hover:text-black-400 text-gray-600 hover:text-gray-800"></i>
+                        </a>
+                    </li>
+                    <li class="bg-gray-100 h-10 w-10 rounded-full flex items-center justify-center shrink-0">
+                        <a href="https://www.linkedin.com/in/enzo-mensier/" target="_blank"
+                            class="hover:opacity-75 transition-opacity">
+                            <i class="fa-brands fa-linkedin-in text-black-100 hover:text-black-400 text-gray-600 hover:text-gray-800"></i>
+                        </a>
+                    </li>
+                    <li class="bg-gray-100 h-10 w-10 rounded-full flex items-center justify-center shrink-0">
+                        <a href="https://github.com/enzo-mensier" target="_blank"
+                            class="hover:opacity-75 transition-opacity">
+                            <i class="fa-brands fa-github text-black-100 hover:text-black-400 text-gray-600 hover:text-gray-800"></i>
+                        </a>
+                    </li>
+                </ul>
+            </div>
         </div>
     </header>
+    
 
     <!-- Hero Section -->
     <main class="pt-24 pb-16 px-6 lg:px-12">
@@ -310,63 +333,50 @@
     </main>
 
     <!--Contact-->
-    <section id="contact" class="max-w-4xl mx-5 my-16 bg-white rounded-2xl shadow-lg" data-aos="fade-up">
-        <div class="grid grid-cols-1 sm:grid-cols-2 items-top gap-8 p-8">
+    <section id="contact" class="max-w-2xl mx-auto my-10 bg-white rounded-2xl shadow-lg px-5" data-aos="fade-up">
+        <div class="grid grid-cols-1 gap-8 p-8">
             <div>
                 <h2 class="text-3xl font-bold text-gray-900 mb-4">Contact</h2>
                 <p class="text-sm text-gray-500 mt-3">
                     N'hésitez pas à me contacter pour toute question, proposition ou demande de collaboration.
                 </p>
-                <div class="mt-12">
-                    <h3 class="text-lg font-semibold text-gray-900 mb-3">Réseaux</h3>
-                    <ul class="flex mt-3 space-x-4">
-                        <li class="bg-gray-100 h-10 w-10 rounded-full flex items-center justify-center shrink-0">
-                            <a href="mailto:enzo.mensier@gmail.com" target="_blank"
-                                class="hover:opacity-75 transition-opacity">
-                                <i class="fa-solid fa-envelope text-black-100 hover:text-black-400 text-gray-600 hover:text-gray-800"></i>
-                            </a>
-                        </li>
-                        <li class="bg-gray-100 h-10 w-10 rounded-full flex items-center justify-center shrink-0">
-                            <a href="https://www.linkedin.com/in/enzo-mensier/" target="_blank"
-                                class="hover:opacity-75 transition-opacity">
-                                <i class="fa-brands fa-linkedin-in text-black-100 hover:text-black-400 text-gray-600 hover:text-gray-800"></i>
-                            </a>
-                        </li>
-                        <li class="bg-gray-100 h-10 w-10 rounded-full flex items-center justify-center shrink-0">
-                            <a href="https://github.com/enzo-mensier" target="_blank"
-                                class="hover:opacity-75 transition-opacity">
-                                <i class="fa-brands fa-github text-black-100 hover:text-black-400 text-gray-600 hover:text-gray-800"></i>
-                            </a>
-                        </li>
-                    </ul>
-                </div>
             </div>
     
             <form action="mailto:enzo.mensier@gmail.com" method="post" enctype="text/plain" class="space-y-4">
-                <div>
-                    <input type="text" name="nom" placeholder="ex : Jean Dupont" required
-                        class="w-full rounded-md py-2 px-4 border text-sm focus:outline-none focus:ring-2 focus:ring-blue-500">
+                <div class="flex justify-center">
+                    <div class="relative flex items-center w-full sm:w-full md:w-3/4">
+                        <i class="fa-solid fa-user absolute left-3 text-gray-400"></i>
+                        <input type="text" name="nom" placeholder="Nom" required
+                            class="w-full rounded-md py-2 pl-10 pr-4 border text-sm focus:outline-none focus:ring-2 focus:ring-blue-500 focus:shadow-md focus:border-blue-600">
+                    </div>
                 </div>
-                <div>
-                    <input type="email" name="email" placeholder="ex : jean.dupont@exemple.com" required
-                        class="w-full rounded-md py-2 px-4 border text-sm focus:outline-none focus:ring-2 focus:ring-blue-500">
+                <div class="flex justify-center">
+                    <div class="relative flex items-center w-full sm:w-full md:w-3/4">
+                        <i class="fa-solid fa-envelope absolute left-3 text-gray-400"></i>
+                        <input type="email" name="email" placeholder="Email" required
+                            class="w-full rounded-md py-2 pl-10 pr-4 border text-sm focus:outline-none focus:ring-2 focus:ring-blue-500 focus:shadow-md focus:border-blue-600">
+                    </div>
                 </div>
-                <div>
-                    <input type="text" name="sujet" placeholder="ex : Proposition de collaboration"
-                        class="w-full rounded-md py-2 px-4 border text-sm focus:outline-none focus:ring-2 focus:ring-blue-500">
+                <div class="flex justify-center">
+                    <div class="relative flex items-center w-full sm:w-full md:w-3/4">
+                        <i class="fa-solid fa-heading absolute left-3 text-gray-400"></i>
+                        <input type="text" name="sujet" placeholder="Sujet" required
+                            class="w-full rounded-md py-2 pl-10 pr-4 border text-sm focus:outline-none focus:ring-2 focus:ring-blue-500 focus:shadow-md focus:border-blue-600">
+                    </div>
                 </div>
-                <div>
-                    <textarea name="message" placeholder="ex : Bonjour, je suis intéressé par..." rows="6" required
-                        class="w-full rounded-md px-4 border text-sm pt-2 focus:outline-none focus:ring-2 focus:ring-blue-500"></textarea>
+                <div class="flex justify-center">
+                    <div class="relative w-full sm:w-full md:w-3/4">
+                        <textarea name="message" placeholder="Message" rows="6" required
+                            class="w-full rounded-md px-4 pt-2 border text-sm focus:outline-none focus:ring-2 focus:ring-blue-500 focus:shadow-md focus:border-blue-600"></textarea>
+                    </div>
                 </div>
-                <div class="text-center">
+                <div class="flex justify-center">
                     <button type="submit"
-                        class="bg-blue-500 hover:bg-blue-600 text-white font-semibold rounded-md text-sm px-4 py-2 w-full transition-colors duration-300">
+                        class="w-full sm:w-full md:w-3/4 bg-blue-500 hover:bg-blue-600 text-white font-semibold rounded-md text-sm px-4 py-2 transition-colors duration-300">
                         Envoyer
                     </button>
                 </div>
             </form>
-        </div>
     </section>
 
     <!-- Footer -->
