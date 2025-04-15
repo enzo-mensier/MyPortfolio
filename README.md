@@ -14,7 +14,7 @@ Ce portfolio a pour but de **présenter mes projets**, mes compétences et mon p
 
 ## 🖥️ Description  
 
-Ce site web est conçu en **HTML & CSS**, avec une approche épurée et responsive pour garantir une navigation fluide. Il comprend plusieurs sections :  
+Ce site web est conçu en **Tailwind CSS**, avec une approche épurée et responsive pour garantir une navigation fluide. Il comprend plusieurs sections :  
 
 - **Accueil** : Petite introduction qui permet de mettre du contexte avant de découvrir mes projets web.  
 - **Projets** : Extrait de projets web conçu dans un contexte scolaire ou **auto-didacte** permettant de positionner l'utilisateur de mon niveau dans le développement web.
@@ -31,7 +31,7 @@ Ce site web est conçu en **HTML & CSS**, avec une approche épurée et responsi
 
 - **Git/GitHub** : Plateforme utile la gestion de code source et la collaboration dans un projet de développement.
 - **HTML** : Structure de mon Portfolio.
-- **CSS** : Mise en page de mon Portfolio.
+- **Tailwind** : Framework utile à la mise en page de mon Portfolio.
 - **Netlify** : Services d'hébergement pour des sites web statiques comme ce portfolio.
 
 ## 🎯 Objectifs  
