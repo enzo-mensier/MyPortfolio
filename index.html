@@ -34,7 +34,15 @@
         .project-card:hover::before {
             opacity: 1;
         }
-    </style>
+    
+        @keyframes marquee {
+            0% { transform: translateX(0); }
+            100% { transform: translateX(-50%); }
+        }
+        .animate-marquee {
+            animation: marquee 15s linear infinite;
+        }
+</style>
 </head>
 <body class="font-inter bg-gray-50 text-gray-900 transition-colors duration-300">    
     <header class="fixed w-full py-4 px-6 lg:px-12 bg-white/80 backdrop-blur-xl border-b border-gray-100 z-[999]">
@@ -72,7 +80,7 @@
     <!-- Hero Section -->
     <main class="pt-24 pb-16 px-6 lg:px-12">
         <section class="max-w-7xl mx-auto text-center mb-24" data-aos="fade-up">
-            <h1 class="text-4xl md:text-5xl font-bold bg-gradient-to-r from-blue-700 to-purple-400 bg-clip-text text-transparent mb-6">
+            <h1 class="text-4xl md:text-5xl font-bold bg-gradient-to-r from-blue-700 to-purple-400 bg-clip-text text-transparent mb-6 mt-10">
                 Bienvenue sur mon Portfolio
             </h1>
             <p class="text-lg text-gray-600 max-w-2xl mx-auto mb-8">
@@ -87,14 +95,39 @@
             </div>
         </section>
 
-        <!-- Projects Grid -->
-        <section class="max-w-7xl mx-auto">
-            <h2 class="text-3xl font-bold text-gray-900 mb-12 text-center" data-aos="fade-up">#Projets</h2>
-            
+        <!-- Skills Section -->
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <h2 class="text-3xl font-extrabold text-center mb-16" data-aos="fade-right">#Compétences</h2>
+            <div class="overflow-hidden relative h-28">
+              <div class="absolute animate-marquee flex space-x-20 w-max">
+                <img src="icone/html.png" alt="HTML" class="h-14" />
+                <img src="icone/css.png" alt="CSS" class="h-14" />
+                <img src="icone/bootstrap.png" alt="Bootstrap" class="h-14" />
+                <img src="icone/javascript.png" alt="JavaScript" class="h-14" />
+                <img src="icone/php.png" alt="PHP" class="h-14" />
+                <img src="icone/mysql.png" alt="MySQL" class="h-14" />
+                <img src="icone/phpmyadmin.png" alt="phpMyAdmin" class="h-14" />
+                <img src="icone/wampp.png" alt="WampServer" class="h-14" />
+                <img src="icone/python.png" alt="Python" class="h-14" />
+                <img src="icone/cpp.png" alt="C++" class="h-14" />
+                <img src="icone/flutter.png" alt="Flutter" class="h-14" />
+                <img src="icone/dart.png" alt="Dart" class="h-14" />
+                <img src="icone/androidstudio.png" alt="Android Studio" class="h-14" />
+                <img src="icone/vscode.png" alt="VS Code" class="h-14" />
+                <img src="icone/github.png" alt="GitHub" class="h-14" />
+                <img src="icone/raspberry.png" alt="Raspberry Pi" class="h-14" />
+                <img src="icone/chartjs.png" alt="Chart.js" class="h-14" />
+                <img src="icone/grafana.png" alt="Grafana" class="h-14" />
+              </div>
+            </div>
+          </div>
+          
+            <!-- Projects Grid -->
+            <h2 class="text-3xl font-extrabold text-center mb-8" data-aos="fade-right">#Projets</h2>
             <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
                 <!-- Project Card 1 -->
                 <div class="project-card group relative bg-white rounded-2xl p-6 shadow-lg hover:shadow-xl transition-all duration-300" 
-                    data-aos="fade-up">
+                    data-aos="fade-right">
                     <div class="overflow-hidden rounded-xl mb-4">
                         <img src="projet/Projet-IoT.png" alt="IoT" class="w-full h-auto object-cover transform group-hover:scale-105 transition-transform duration-300">
                     </div>
@@ -140,11 +173,11 @@
                 </div>
                 <!-- Project Card 2 -->
                 <div class="project-card group relative bg-white rounded-2xl p-6 shadow-lg hover:shadow-xl transition-all duration-300" 
-                    data-aos="fade-up">
+                    data-aos="fade-left">
                     <div class="overflow-hidden rounded-xl mb-4">
                         <img src="projet/Projet-GymTech.png" alt="GymTech" class="w-full h-auto object-cover transform group-hover:scale-105 transition-transform duration-300">
                     </div>
-                    <h3 class="text-xl font-semibold text-gray-900 mb-2">GymTech</h3>
+                    <h3 id="Projet-GymTech" class="text-xl font-semibold text-gray-900 mb-2">GymTech</h3>
                     <p class="text-gray-600 mb-4">Automatisation d'une salle de Sport à Dunkerque</p>
                     <div class="flex flex-wrap gap-3">
                         <div class="flex items-center space-x-1 px-3 py-1 bg-gray-100 rounded-full">
@@ -182,7 +215,7 @@
                 </div>
                 <!-- Project Card 3 -->
                 <div class="project-card group relative bg-white rounded-2xl p-6 shadow-lg hover:shadow-xl transition-all duration-300" 
-                    data-aos="fade-up">
+                    data-aos="fade-right">
                     <div class="overflow-hidden rounded-xl mb-4">
                         <img src="projet/Projet-LoveLetter.png" alt="LoveLetter" class="w-full h-auto object-cover transform group-hover:scale-105 transition-transform duration-300">
                     </div>
@@ -220,7 +253,7 @@
                 </div>
                 <!-- Project Card 4 -->
                 <div class="project-card group relative bg-white rounded-2xl p-6 shadow-lg hover:shadow-xl transition-all duration-300" 
-                        data-aos="fade-up">
+                        data-aos="fade-left">
                     <div class="overflow-hidden rounded-xl mb-4">
                         <img src="projet/Projet-QRCode.png" alt="QRCode" class="w-full h-auto object-cover transform group-hover:scale-105 transition-transform duration-300">
                     </div>
@@ -246,11 +279,11 @@
                 </div>
                 <!-- Project Card 5 -->
                 <div class="project-card group relative bg-white rounded-2xl p-6 shadow-lg hover:shadow-xl transition-all duration-300" 
-                    data-aos="fade-up">
+                    data-aos="fade-right">
                     <div class="overflow-hidden rounded-xl mb-4">
                         <img src="projet/Projet-Hville.png" alt="Hville" class="w-full h-auto object-cover transform group-hover:scale-105 transition-transform duration-300">
                     </div>
-                    <h3 class="text-xl font-semibold text-gray-900 mb-2">Hville</h3>
+                    <h3 id="Projet-Hville" class="text-xl font-semibold text-gray-900 mb-2">Hville</h3>
                     <p class="text-gray-600 mb-4">Initiation au langage SQL avec un mini-projet de groupe</p>
                     <div class="flex flex-wrap gap-3">
                         <div class="flex items-center space-x-1 px-3 py-1 bg-gray-100 rounded-full">
@@ -288,11 +321,11 @@
                 </div>
                 <!-- Project Card 6 -->
                 <div class="project-card group relative bg-white rounded-2xl p-6 shadow-lg hover:shadow-xl transition-all duration-300" 
-                    data-aos="fade-up">
+                    data-aos="fade-left">
                     <div class="overflow-hidden rounded-xl mb-4">
                         <img src="projet/Projet-FootView.png" alt="FootView" class="w-full h-auto object-cover transform group-hover:scale-105 transition-transform duration-300">
                     </div>
-                    <h3 class="text-xl font-semibold text-gray-900 mb-2">Foot-View</h3>
+                    <h3 id="Projet-FootView" class="text-xl font-semibold text-gray-900 mb-2">Foot-View</h3>
                     <p class="text-gray-900 mb-4 text-left">
                         Développé par 
                         <a href="https://github.com/wicra" target="_blank" 
@@ -337,7 +370,7 @@
     </main>
 
     <!--Contact-->
-    <h2 class="text-3xl font-bold text-gray-900 my-4 text-center" data-aos="fade-up">#Contact</h2>
+    <h2 class="text-3xl font-extrabold text-center mb-8" data-aos="fade-right">#Contact</h2>
     <section id="contact" class="max-w-2xl mx-auto mb-10 bg-white rounded-2xl shadow-lg text-center" data-aos="fade-up">
         <div class="grid grid-cols-1 gap-8 p-4">
             <div>
