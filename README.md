@@ -9,7 +9,7 @@ Ce portfolio a pour but de **présenter mes projets**, mes compétences et mon p
 🔗 <u>[Accédez à mon Portfolio](https://mensierenzo.netlify.app)</u> 
 
 <div style="text-align: center;">  
-<img src="preview.png" width="95%" alt="Aperçu du Portfolio"/>  
+<img src="preview.png" width="65%" alt="Aperçu du Portfolio"/>  
 </div>
 
 ## 🖥️ Description  
