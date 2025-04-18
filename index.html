@@ -11,6 +11,35 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" /> 
     <link rel="icon" type="image/png" href="images/photo-enzo.png">
     <style>
+        /*TITLE - Hero Section*/
+        @keyframes gradientAnimation {
+        0% {
+            background-position: 0% 50%;
+        }
+        50% {
+            background-position: 100% 50%;
+        }
+        100% {
+            background-position: 0% 50%;
+        }
+        }
+        .animate-gradient {
+        background-size: 200% 200%;
+        animation: gradientAnimation 6s ease infinite;
+        }
+
+        
+        /*PICTURES - Skills Section*/
+        @keyframes marquee {
+            0% { transform: translateX(0); }
+            100% { transform: translateX(-50%); }
+        }
+        .animate-marquee {
+            animation: marquee 15s linear infinite;
+        }
+
+
+        /*CARD - Project Section*/
         @keyframes shine {
             100% { left: 200%; }
         }
@@ -33,14 +62,6 @@
         }
         .project-card:hover::before {
             opacity: 1;
-        }
-    
-        @keyframes marquee {
-            0% { transform: translateX(0); }
-            100% { transform: translateX(-50%); }
-        }
-        .animate-marquee {
-            animation: marquee 15s linear infinite;
         }
 </style>
 </head>
@@ -80,7 +101,7 @@
     <!-- Hero Section -->
     <main class="pt-24 pb-16 px-6 lg:px-12">
         <section class="max-w-7xl mx-auto text-center mb-24" data-aos="fade-up">
-            <h1 class="text-4xl md:text-5xl font-bold bg-gradient-to-r from-blue-700 to-purple-400 bg-clip-text text-transparent mb-6 mt-10">
+            <h1 class="text-4xl md:text-5xl font-bold bg-gradient-to-r from-purple-600 via-gray-400 to-purple-400 bg-clip-text text-transparent mb-6 mt-10 animate-gradient">
                 Bienvenue sur mon Portfolio
             </h1>
             <p class="text-lg text-gray-600 max-w-2xl mx-auto mb-8">
